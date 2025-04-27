@@ -14,15 +14,25 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       height: 100vh;
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
       text-align: center;
     }
 
+    img {
+      margin-top: 30px;
+      width: 250px;
+      height: auto;
+      filter: brightness(0.8) contrast(1.2);
+      animation: glitchLogo 2s infinite alternate;
+    }
+
     h1 {
-      font-size: 2.5em;
+      font-size: 2.2em;
       letter-spacing: 0.1em;
+      margin-top: 30px;
       animation: flicker 2s infinite alternate;
     }
 
@@ -52,9 +62,16 @@
       50% { opacity: 0.6; }
       100% { opacity: 1; }
     }
+
+    @keyframes glitchLogo {
+      0% { transform: translate(0, 0) skew(0deg); }
+      50% { transform: translate(2px, -2px) skew(1deg); }
+      100% { transform: translate(-2px, 2px) skew(-1deg); }
+    }
   </style>
 </head>
 <body>
+  <img src="logo-glitched.png" alt="WRETCHED Logo">
   <h1>EXECUTED // NODE 041-C</h1>
   <p>Signal corruption spreading. Containment failed.</p>
   <div class="links">
@@ -63,3 +80,4 @@
   </div>
 </body>
 </html>
+
